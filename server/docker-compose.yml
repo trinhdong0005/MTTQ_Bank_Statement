@@ -1,0 +1,8 @@
+services:
+  mttq_statement_be:
+    image: dongdev/mttq_statement_be:latest
+    container_name: mttq_statement_be
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: on-failure
