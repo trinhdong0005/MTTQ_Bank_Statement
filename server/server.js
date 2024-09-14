@@ -8,14 +8,16 @@ const app = express()
 const port = 3000
 
 
+// Sử dụng middleware cors
 app.use(cors())
 
+// Đọc dữ liệu từ file JSON
 const filePath = path.join(__dirname, 'transactions.json')
 let data = []
 
 const title = 'Danh sách đóng góp cho MTTQVN'
 const header = title
-const content = 'Theo công bố của MTTQVN đến ngày 12/09/2024'
+const content = 'Theo công bố của MTTQVN đến ngày 12/09/2024 bao gồm VCB, CTG, BIDV'
 
 fs.readFile(filePath, 'utf8', (err, jsonData) => {
   if (err) {
@@ -29,16 +31,18 @@ fs.readFile(filePath, 'utf8', (err, jsonData) => {
   }
 });
 
-
+// API để lấy dữ liệu
 app.get('/api/data', (req, res) => {
   let { search, startDate, endDate, min, max, sortBy, order = 'asc', page = 1, pageSize = 10 } = req.query
 
   let results = data;
 
+  // Sắp xếp
   if (sortBy) {
     results = _.orderBy(results, [sortBy], [order])
   }
 
+  // Lọc theo khoảng
   if (min) {
     results = _.filter(results, item => {
       return item.amount >= min
@@ -50,6 +54,7 @@ app.get('/api/data', (req, res) => {
     });
   }
 
+  //Lọc theo ngày
   if (startDate) {
     results = _.filter(results, item => {
       return new Date(item.date) >= new Date(startDate)
@@ -61,6 +66,7 @@ app.get('/api/data', (req, res) => {
     });
   }
 
+  // Tìm kiếm
   if (search) {
     results = _.filter(results, item => {
       return Object.values(item).some(value => 
@@ -69,6 +75,7 @@ app.get('/api/data', (req, res) => {
     });
   }
 
+  // Phân trang
   page = parseInt(page, 10)
   pageSize = parseInt(pageSize, 10)
   const total = results.length
@@ -77,6 +84,7 @@ app.get('/api/data', (req, res) => {
   const endIndex = startIndex + pageSize
   results = results.slice(startIndex, endIndex)
 
+  // Trả về dữ liệu
   res.json({
     content: {
       title,
