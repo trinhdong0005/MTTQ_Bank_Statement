@@ -22,6 +22,7 @@ const content = `
   <p><a href="https://www.facebook.com/share/p/4Cwof7rcpcD42qw4/">CTG_01</a>: 10/9/2024 - 12/9/2024</p>
   <p><a href="https://www.facebook.com/share/p/2vdLJmLZZWvTpr75/">BIDV_01</a>: 1/9/2024 - 12/9/2024</p>
   <p><a href="https://www.facebook.com/share/p/e7pXvwhrM3GCtqeX/">VCB_02</a>: 11/9/2024</p>
+  <p><a href="https://www.facebook.com/share/p/9Cnn72Y4RvB9h9JD/">VCB_03</a>: 12/9/2024</p>
 `
 
 fs.readFile(filePath, 'utf8', (err, jsonData) => {
