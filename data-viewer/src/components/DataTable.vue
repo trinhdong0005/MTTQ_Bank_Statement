@@ -3,9 +3,7 @@
     <div class="max-w-7xl mx-auto">
       <!-- Tiêu đề chính -->
       <h1 class="text-2xl sm:text-3xl font-bold mb-2 text-center">{{ content.header }}</h1>
-      <p class="text-sm sm:text-base text-center text-gray-600 mb-8">
-        {{ content.content }}
-      </p>
+      <div class="text-sm sm:text-base text-center text-gray-600 mb-8" v-html="content.content"></div>
 
       <!-- Bộ lọc -->
       <div class="filters flex flex-col sm:flex-row sm:space-x-4 mb-6">
@@ -118,7 +116,7 @@
     </div>
 
     <div class="flex justify-center mt-4">
-      <p>Source code: <a href="https://github.com/trinhdong0005/MTTQ_Bank_Statement.git" class="text-sky-800">MTTQ_Bank_Statement</a></p>
+      <p>Source code: <a href="https://github.com/trinhdong0005/MTTQ_Bank_Statement.git">MTTQ_Bank_Statement</a></p>
     </div>
   </div>
 </template>

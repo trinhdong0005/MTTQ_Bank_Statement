@@ -16,8 +16,13 @@ const filePath = path.join(__dirname, 'transactions.json')
 let data = []
 
 const title = 'Danh sách đóng góp cho MTTQVN'
-const header = title
-const content = 'Theo công bố của MTTQVN đến ngày 12/09/2024 bao gồm VCB, CTG, BIDV'
+const header = 'Danh sách đóng góp theo công bố của MTTQVN'
+const content = `
+  <p><a href="https://www.facebook.com/share/p/tRsuj7XCWoNkb64B/">VCB_01</a>: 1/9/2024 - 10/9/2024</p>
+  <p><a href="https://www.facebook.com/share/p/4Cwof7rcpcD42qw4/">CTG_01</a>: 10/9/2024 - 12/9/2024</p>
+  <p><a href="https://www.facebook.com/share/p/2vdLJmLZZWvTpr75/">BIDV_01</a>: 1/9/2024 - 12/9/2024</p>
+  <p><a href="https://www.facebook.com/share/p/e7pXvwhrM3GCtqeX/">VCB_02</a>: 11/9/2024</p>
+`
 
 fs.readFile(filePath, 'utf8', (err, jsonData) => {
   if (err) {
