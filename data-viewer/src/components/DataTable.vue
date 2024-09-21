@@ -111,7 +111,7 @@
             <tr v-for="item in data?.results" :key="item?.code">
               <td class="px-4 py-4 sm:px-6 sm:py-5 whitespace-nowrap">{{ item?.code }}</td>
               <td class="px-4 py-4 sm:px-6 sm:py-5 whitespace-nowrap">{{ formatDate(item?.date) }}</td>
-              <td class="px-4 py-4 sm:px-6 sm:py-5 whitespace-nowrap">{{ currencyFormat(item?.amount) }}</td>
+              <td class="px-4 py-4 sm:px-6 sm:py-5 whitespace-nowrap">{{ currencyFormat(item?.amount ?? 0) }}</td>
               <td class="px-4 py-4 sm:px-6 sm:py-5 whitespace-nowrap">{{ item?.notes }}</td>
             </tr>
           </tbody>

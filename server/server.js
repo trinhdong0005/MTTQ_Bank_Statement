@@ -52,7 +52,7 @@ app.get('/api/data', (req, res) => {
 
   // Sắp xếp
   if (sortBy) {
-    results = _.orderBy(results, [sortBy], [order])
+    results = _.orderBy(results, [(o) => { return o[sortBy] || ''}], [order])
   }
 
   // Lọc theo khoảng
