@@ -28,7 +28,8 @@ const content = `
   <a href="https://www.facebook.com/share/p/nT4Yq8bQGAMhYFhK/">VCB_05</a>: 14/9/2024 -
   <a href="https://www.facebook.com/share/p/FkWCNxGCEqCErnpm/">CTG_02</a>: 13/9/2024 - 15/9/2024 - 
   <a href="https://www.facebook.com/share/p/7uMKXxrJ9UpWmoVR/">CTG_03</a>: 16/9/2024 -
-  <a href="https://www.facebook.com/share/p/UfxRXCWQ3yvLCuDE/">CTG_04</a>: 17/9/2024
+  <a href="https://www.facebook.com/share/p/UfxRXCWQ3yvLCuDE/">CTG_04</a>: 17/9/2024 - 
+  <a href="https://www.facebook.com/share/p/BahdMxQuXXD6zRKW/">CTG_05</a>: 18/9/2024
 </p>
 `
 
